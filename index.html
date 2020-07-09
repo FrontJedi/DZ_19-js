@@ -14,66 +14,506 @@
         //         Задача 1:
         //         Создайте объект city1(let city1 = {}), укажите у него свойства name(название города, строка) со значением «ГородN» и population(населенность города, число) со значением 10 млн.
 
+        let city1 = {
+            name: 'ГородN',
+            population: 1000000
+        }
+
+        console.log(city1);
+
+
+
+
+        //     Задача 2:
+        // Из обьекта johnDoe https://jsfiddle.net/72qkgetv/1/
+        // Вытащить и вывести в консоль следующие значения:
+
+        // - город из рабочего адреса
+        // - имя второго друга
+        // - номера телефонов через запятую
+        // - имя друга с наименьшим возрастом
+        // - роль пользователя, которая true(в данном случае isUser)
+
+        const markTwen = {
+            name: 'Mark',
+            surname: 'Twen',
+            age: 40
+        }
+
+        const sarahDoe = {
+            name: 'Sarah',
+            surname: 'Doe',
+            age: 14
+        }
+
+        const johnDoe = {
+            name: 'John',
+            surname: 'Doe',
+            age: 30,
+            hobbies: ['football', 'darts', 'swimming'],
+            contacts: {
+                phones: ['0987654', '1234567'],
+                email: ['asd@asd.com', 'asdfd@asw.com']
+            },
+            address: {
+                work: {
+                    city: 'Berlin',
+                    postCode: '03457'
+                },
+                home: {
+                    city: 'Munich',
+                    postCode: '12356'
+                },
+            },
+            sallary: {
+                main: 3000,
+                bonus: 500,
+                rate: 25
+            },
+            roles: {
+                isAdmin: false,
+                isModer: false,
+                isUser: true
+            },
+            friends: [
+                markTwen,
+                sarahDoe,
+                {
+                    name: 'John',
+                    surname: 'Snow',
+                    age: 5000
+                }
+            ]
+        }
+
+        console.log(johnDoe.address.work.city);
+        console.log(johnDoe.friends[1].name);
+        console.log(johnDoe.contacts.phones);
+        console.log(johnDoe.friends[1].name, johnDoe.friends[1].age);
+        console.log(johnDoe.roles.isUser);
+
+
+
+
+        //         Задача 3:
+        //         Создать 5 обьектов автомобилей и наполнить их большим количеством данных:
+        //         Год выпуска
+        //         Вес
+        //         Кузов
+        //         Двигатель
+        //         Трансмиссия
+        //         Тормозная система
+        //         Рулевое управление
+        //         и т д
+
+        //         поля должны называться на английском.
+
+        //             Пример:
+        //         let bmwX5 = {
+        //             weight: 3400,
+        //             ....
+        // 
+
+        const skodaFabia = {
+            general: {
+                brand: 'skoda fabia',
+                type: 'car',
+                body: 'station wagon',
+                generation: 'fabia II (2)',
+                country: 'czech republic',
+                'year of release': '2008',
+                'number of doors': '5',
+                'number of seats': '5',
+                price: '5689'
+            },
+            engine: {
+                'engine location': 'front, cross',
+                'engine displacement': '1.598',
+                horsepower: '75',
+                torque: ['min: 250', 'max: 2500'],
+                'location and number of cylinders': 'in-line / 4',
+                'number of valves per cylinder': '4',
+                'engine power system': 'diesel'
+            },
+            transmission: {
+                transmission: 'manual 5',
+                'type of drive': 'front'
+            },
+            'performance indicators': {
+                'top speed': '117',
+                'acceleration to 100 km/h': '11',
+                'fuel consumption, l': ['city: 5.1', 'road: 3.6', 'mixed: 3.6'],
+                fuel: 'diasel'
+            },
+            dimensions: {
+                length: '4247',
+                weight: '1642',
+                height: '1498',
+                wWheelbase: '2451',
+                clearance: '155',
+            },
+            'suspension and brakes': {
+                suspension: 'McPherson',
+                brakes: 'disk',
+            }
+        }
+
+        const skodaOctavia = {
+            general: {
+                brand: 'skoda octavia',
+                type: 'car',
+                body: 'station wagon',
+                generation: ' octavia II (2)',
+                modification: ' 2.0 FSI 4X4',
+                country: 'czechr republic',
+                'year of release': '2003',
+                'number of doors': '5',
+                'number of seats': '5',
+                price: 8171
+            },
+            engine: {
+                'engine location': 'front, cross',
+                'engine displacement': '1.984',
+                horsepower: '150',
+                torque: 'no data',
+                'location and number of cylinders': 'in-line / 4',
+                'number of valves per cylinder': '4',
+                'engine power system': 'injector'
+            },
+            transmission: {
+                transmission: 'manual 6',
+                'type of drive': 'full permanent'
+            },
+            'performance indicators': {
+                'top speed km/h': '200',
+                'acceleration to 100 km/h': '10',
+                'fuel consumption, l': ['city: no data', 'road: no data', 'mixed: no data'],
+                fuel: 'gasoline-95'
+            },
+            dimensions: {
+                length: '4572',
+                weight: '1779',
+                height: '1484',
+                wWheelbase: '2578',
+                clearance: '180'
+            },
+            'suspension and brakes': {
+                suspension: 'McPherson',
+                brakes: 'disk'
+            }
+        }
+
+
+        const bmwX5 = {
+            general: {
+                brand: 'BMW',
+                model: 'x5',
+                type: 'car',
+                body: 'hatchback',
+                generation: 'no data',
+                modification: '2.0 FSI 4X4',
+                country: 'germany',
+                'year of release': '2010',
+                'number of doors': '5',
+                'number of seats': '7',
+                price: '17200'
+            },
+            engine: {
+                'engine location': 'front, cross',
+                'engine displacement': '3000',
+                horsepower: '150',
+                torque: 'no data',
+                'location and number of cylinders': 'V-8',
+                'number of valves per cylinder': '4',
+                'engine power system': 'injector'
+            },
+            transmission: {
+                transmission: 'automatic 6-Speed',
+                'type of drive': 'full permanent'
+            },
+            'performance indicators': {
+                'top speed km/h': '240',
+                'acceleration to 100 km/h': '6.5',
+                'fuel consumption, l': ['city: 17', 'road: 9.2', 'mixed: 12'],
+                fuel: 'gasoline-95'
+            },
+            dimensions: {
+                length: '4854',
+                weight: '1933',
+                height: '1739',
+                wWheelbase: '2933',
+                clearance: '180'
+            },
+            'suspension and brakes': {
+                suspension: 'McPherson',
+                brakes: 'disk'
+            }
+        }
+
+        const toyotaLandCruiserPrado = {
+            'general information': {
+                brand: 'Toyota',
+                model: 'Land Cruiser Prado',
+                'type of transport': 'Car',
+                'body type': 'SUV',
+                generation: 'Land Cruiser Prado III (3)',
+                modification: '4.0 4WD',
+                'country of brand': 'Japan',
+                'years of issue': '2009 - 2016',
+                'number of doors': '5',
+                'number of seats': '5'
+            },
+            engine: {
+                'engine location': 'Front, longitudinally',
+                'engine capacity': '3,955',
+                power: '282',
+                torque: ['min: 387', 'max: 4400'],
+                'location and number of cylinders': 'B-shaped/6',
+                'number of valves per cylinder': '4',
+                'engine power system': 'Injector'
+            },
+            transmission: {
+                'automatic transmission': '5',
+                'drive type': 'Full permanent'
+            },
+            performance: {
+                'maximum speed km/h': '180',
+                'acceleration to 100 km/h': '9.2',
+                'fuel consumption, l': ['city: 14.7', 'road: 8.6', 'mixed: 10.8'],
+                fuel: 'AI-95'
+            },
+            dimensions: {
+                length: '4760',
+                width: '1885',
+                height: '1845',
+                wheelbase: '2790',
+                clearance: '220'
+            },
+            'suspension and brakes': {
+                'type of a forward suspension bracket': 'lever, spring, with hydraulic telescopic shock absorbers and anti-roll bar',
+                'brakes': 'disc',
+            }
+        }
+
+        const toyotaLandCruiserPradoJ150 = {
+            'general information': {
+                brand: 'Toyota',
+                model: 'Land Cruiser Prado',
+                'type of transport': 'Car',
+                'body type': 'SUV',
+                generation: 'Land Cruiser Prado III (3)',
+                modification: '4.0 4WD',
+                'country of brand': 'Japan',
+                'years of issue': '2010',
+                'number of doors': '5',
+                'number of seats': '5'
+            },
+            engine: {
+                'engine location': 'Front, longitudinally',
+                'engine capacity': '3,955',
+                horsepower: '282',
+                torque: ['min: 387', 'max: 4400'],
+                'location and number of cylinders': 'B-shaped/6',
+                'number of valves per cylinder': '4',
+                'engine power system': 'Injector'
+            },
+            transmission: {
+                'transmission': 'automatice 5-speed',
+                'drive type': 'Full permanent'
+            },
+            performance: {
+                'maximum speed km/h': '180',
+                'acceleration to 100 km/h': '9.2',
+                'fuel consumption, l': ['city: 14.7', 'road: 8.6', 'mixed: 10.8'],
+                fuel: 'gasoline-95'
+            },
+            dimensions: {
+                length: '4760',
+                width: '1885',
+                height: '1845',
+                wheelbase: '2790',
+                clearance: '220'
+            },
+            'suspension and brakes': {
+                suspension: 'lever, spring, with hydraulic telescopic shock absorbers and anti-roll bar',
+                brakes: 'disc'
+            }
+        }
+
+
+        let volvoXC90 = {
+            'general information': {
+                brand: 'Volvo',
+                model: 'XC90',
+                'type of transport': 'Car',
+                'body type': 'SUV',
+                generation: 'XC90',
+                modification: '2.4 D5 (185hp)',
+                'country of brand': 'Sweden',
+                'years of issue': '2010',
+                'number of doors': '5',
+                'number of seats': '5'
+            },
+            engine: {
+                'engine location': 'Front, longitudinally',
+                'engine capacity': '2.4',
+                horsepower: '185',
+                torque: ['min: 400', 'max: 2000'],
+                'location and number of cylinders': 'In-line/5',
+                'number of valves per cylinder': '4',
+                'engine power system': 'Diesel NV'
+            },
+            transmission: {
+                transmission: 'manual 6-speed',
+                'drive type': 'Full constant'
+            },
+            performance: {
+                'maximum speed km/h': '190',
+                'acceleration to 100 km/h': '10.9',
+                'fuel consumption, l': ['city: 10.6', 'road: 6.8', 'mixed: 9'],
+                fuel: 'diesel'
+            },
+            dimensions: {
+                length: '4807',
+                width: '1989',
+                height: '1784',
+                wheelbase: '2857',
+                clearance: '220'
+            },
+            'suspension and brakes': {
+                suspension: 'Shock absorber strut, wishbone, wishbone',
+                'brakes': 'Disk ventilated',
+            }
+        }
+
+
+
+        console.log(skodaFabia);
+        console.log(skodaOctavia);
+        console.log(bmwX5);
+        console.log(toyotaLandCruiserPradoJ150);
+        console.log(volvoXC90);
 
 
 
 
 
-        //             Задача 2:
-        //         Из обьекта johnDoe https://jsfiddle.net/72qkgetv/1/
-        //         Вытащить и вывести в консоль следующие значения:
-
-        //         - город из рабочего адреса
-        //         - имя второго друга
-        //         - номера телефонов через запятую
-        //         - имя друга с наименьшим возрастом
-        //         - роль пользователя, которая true(в данном случае isUser)
 
 
+        //         Задача 4:
+        //         Добавить все автомобили в массив.
+        //         И написать функции которые находит:
 
-//         Задача 3:
-//         Создать 5 обьектов автомобилей и наполнить их большим количеством данных:
-//         Год выпуска
-//         Вес
-//         Кузов
-//         Двигатель
-//         Трансмиссия
-//         Тормозная система
-//         Рулевое управление
-//         и т д
+        //         - авто с ручной коробкой(трансмиссия)
+        //         - самый тяжелый автомобиль(поле вес)
+        //         - самый старый автомобиль(поле год выпуска)
+        //         - авто с самым большим объемом двигателя(поле объем двигателя)
+        //         - авто у которых откидывается крыша
+        //         - считают средний вес всех автомобилей
+        //         - считают средний обьем двигателя
 
-//         поля должны называться на английском.
+        //         все эти свойства должны быть определены в объектах.
 
-//             Пример:
-//         let bmwX5 = {
-//             weight: 3400,
-//             ....
-// }
 
-//         Задача 4:
-//         Добавить все автомобили в массив.
-//         И написать функции которые находит:
 
-//         - авто с ручной коробкой(трансмиссия)
-//             - самый тяжелый автомобиль(поле вес)
-//                 - самый старый автомобиль(поле год выпуска)
-//                     - авто с самым большим объемом двигателя(поле объем двигателя)
-//                         - авто у которых откидывается крыша
-//                             - считают средний вес всех автомобилей
-//                                 - считают средний обьем двигателя
 
-//         все эти свойства должны быть определены в объектах.
 
-//             Задача 5:
-//         В обьекте: https://jsfiddle.net/72qkgetv/2/
 
-//         - Достать из него данные так, чтобы получился текст: “Киевский политехнический институт, вулиця Академіка Янгеля, 5, місто Київ, Украина»
-//         - Вывести координаты lat, lng.
+        //             Задача 5:
+        //         В обьекте: https://jsfiddle.net/72qkgetv/2/
+        //         - Достать из него данные так, чтобы получился текст: “Киевский политехнический институт, вулиця Академіка Янгеля, 5, місто Київ, Украина»
+        //         - Вывести координаты lat, lng.
 
-//             Задача 6:
-//         Создать объект.
-//         Запросить пользователя заполнить этот обьект спрашивая у наго по порядку ключ и значение через функцию prompt.
-//         Как только пользователь введет строку "END" - вывести получившийся объект в консоль.
+        // const coordinates = {
+        //     "results": [
+        //         {
+        //             "address_components": [
+        //                 {
+        //                     "long_name": "5",
+        //                     "short_name": "5",
+        //                     "types": ["street_number"]
+        //                 },
+        //                 {
+        //                     "long_name": "Киевский политехнический институт",
+        //                     "short_name": "Киевский политехнический институт",
+        //                     "types": ["establishment"]
+        //                 },
+        //                 {
+        //                     "long_name": "вулиця Академіка Янгеля",
+        //                     "short_name": "вулиця Академіка Янгеля",
+        //                     "types": ["route"]
+        //                 },
+        //                 {
+        //                     "long_name": "Солом'янський район",
+        //                     "short_name": "Солом'янський район",
+        //                     "types": ["sublocality_level_1", "sublocality", "political"]
+        //                 },
+        //                 {
+        //                     "long_name": "Київ",
+        //                     "short_name": "Київ",
+        //                     "types": ["locality", "political"]
+        //                 },
+        //                 {
+        //                     "long_name": "місто Київ",
+        //                     "short_name": "місто Київ",
+        //                     "types": ["administrative_area_level_2", "political"]
+        //                 },
+        //                 {
+        //                     "long_name": "місто Київ",
+        //                     "short_name": "місто Київ",
+        //                     "types": ["administrative_area_level_1", "political"]
+        //                 },
+        //                 {
+        //                     "long_name": "Украина",
+        //                     "short_name": "UA",
+        //                     "types": ["country", "political"]
+        //                 }
+        //             ],
+        //             "geometry": {
+        //                 "location": {
+        //                     "lat": 50.449819,
+        //                     "lng": 30.453404
+        //                 },
+        //                 "location_type": "ROOFTOP",
+        //                 "viewport": {
+        //                     "northeast": {
+        //                         "lat": 50.4511679802915,
+        //                         "lng": 30.4547529802915
+        //                     },
+        //                     "southwest": {
+        //                         "lat": 50.4484700197085,
+        //                         "lng": 30.4520550197085
+        //                     }
+        //                 }
+        //             },
+        //             "types": ["street_address"]
+        //         }
+        //     ],
+        //     "status": "OK"
+        // }
+
+        // console.log(coordinates.results[1].long_name);
+
+
+
+
+
+        //             Задача 6:
+        //         Создать объект.
+        //         Запросить пользователя заполнить этот обьект спрашивая у нeго по порядку ключ и значение через функцию prompt.
+        //         Как только пользователь введет строку "END" - вывести получившийся объект в консоль.
+
+        // let key = prompt('Введите ключ');
+        // let value = prompt('Присвоить значение ключа');
+        // const data = {};
+
+        // function addData(key, value) {
+        //     const dataKey = data[key];
+        //     data[key] = value;
+        // }
+        // console.log(data);
+
+        // data(key, value);
 
     </script>
 
