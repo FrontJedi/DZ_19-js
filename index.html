@@ -112,7 +112,6 @@
         //         let bmwX5 = {
         //             weight: 3400,
         //             ....
-        // 
 
         const skodaFabia = {
             general: {
@@ -121,7 +120,7 @@
                 body: 'station wagon',
                 generation: 'fabia II (2)',
                 country: 'czech republic',
-                'year of release': '2008',
+                year: '2008',
                 'number of doors': '5',
                 'number of seats': '5',
                 price: '5689'
@@ -166,7 +165,7 @@
                 generation: ' octavia II (2)',
                 modification: ' 2.0 FSI 4X4',
                 country: 'czechr republic',
-                'year of release': '2003',
+                year: '2003',
                 'number of doors': '5',
                 'number of seats': '5',
                 price: 8171
@@ -213,7 +212,7 @@
                 generation: 'no data',
                 modification: '2.0 FSI 4X4',
                 country: 'germany',
-                'year of release': '2010',
+                year: '2010',
                 'number of doors': '5',
                 'number of seats': '7',
                 price: '17200'
@@ -295,52 +294,6 @@
             }
         }
 
-        const toyotaLandCruiserPradoJ150 = {
-            'general information': {
-                brand: 'Toyota',
-                model: 'Land Cruiser Prado',
-                'type of transport': 'Car',
-                'body type': 'SUV',
-                generation: 'Land Cruiser Prado III (3)',
-                modification: '4.0 4WD',
-                'country of brand': 'Japan',
-                'years of issue': '2010',
-                'number of doors': '5',
-                'number of seats': '5'
-            },
-            engine: {
-                'engine location': 'Front, longitudinally',
-                'engine capacity': '3,955',
-                horsepower: '282',
-                torque: ['min: 387', 'max: 4400'],
-                'location and number of cylinders': 'B-shaped/6',
-                'number of valves per cylinder': '4',
-                'engine power system': 'Injector'
-            },
-            transmission: {
-                'transmission': 'automatice 5-speed',
-                'drive type': 'Full permanent'
-            },
-            performance: {
-                'maximum speed km/h': '180',
-                'acceleration to 100 km/h': '9.2',
-                'fuel consumption, l': ['city: 14.7', 'road: 8.6', 'mixed: 10.8'],
-                fuel: 'gasoline-95'
-            },
-            dimensions: {
-                length: '4760',
-                width: '1885',
-                height: '1845',
-                wheelbase: '2790',
-                clearance: '220'
-            },
-            'suspension and brakes': {
-                suspension: 'lever, spring, with hydraulic telescopic shock absorbers and anti-roll bar',
-                brakes: 'disc'
-            }
-        }
-
-
         let volvoXC90 = {
             'general information': {
                 brand: 'Volvo',
@@ -386,14 +339,11 @@
             }
         }
 
-
-
         console.log(skodaFabia);
         console.log(skodaOctavia);
         console.log(bmwX5);
-        console.log(toyotaLandCruiserPradoJ150);
+        console.log(toyotaLandCruiserPrado);
         console.log(volvoXC90);
-
 
 
 
@@ -414,6 +364,29 @@
 
         //         все эти свойства должны быть определены в объектах.
 
+        const cars = [skodaFabia, skodaOctavia, bmwX5, toyotaLandCruiserPrado, volvoXC90];
+
+        function findOldestCar(cars) {
+            let oldestCar;
+
+            for (let i = 0; i < cars.length; i++) {
+                if (cars[i].general.year < cars[i + 1].general.year) {
+                    let oldestCar = cars[i].general.year;
+                    break;
+                }
+
+                // if (cars[i].year === minYear) {
+                //     oldestCar = cars[i];
+                //     break;
+                // }
+            }
+            return oldestCar;
+        }
+
+        const res = findOldestCar(cars);
+
+        console.log(`Задача 4: самая старая модель ${res} года`);
+
 
 
 
@@ -424,75 +397,77 @@
         //         - Достать из него данные так, чтобы получился текст: “Киевский политехнический институт, вулиця Академіка Янгеля, 5, місто Київ, Украина»
         //         - Вывести координаты lat, lng.
 
-        // const coordinates = {
-        //     "results": [
-        //         {
-        //             "address_components": [
-        //                 {
-        //                     "long_name": "5",
-        //                     "short_name": "5",
-        //                     "types": ["street_number"]
-        //                 },
-        //                 {
-        //                     "long_name": "Киевский политехнический институт",
-        //                     "short_name": "Киевский политехнический институт",
-        //                     "types": ["establishment"]
-        //                 },
-        //                 {
-        //                     "long_name": "вулиця Академіка Янгеля",
-        //                     "short_name": "вулиця Академіка Янгеля",
-        //                     "types": ["route"]
-        //                 },
-        //                 {
-        //                     "long_name": "Солом'янський район",
-        //                     "short_name": "Солом'янський район",
-        //                     "types": ["sublocality_level_1", "sublocality", "political"]
-        //                 },
-        //                 {
-        //                     "long_name": "Київ",
-        //                     "short_name": "Київ",
-        //                     "types": ["locality", "political"]
-        //                 },
-        //                 {
-        //                     "long_name": "місто Київ",
-        //                     "short_name": "місто Київ",
-        //                     "types": ["administrative_area_level_2", "political"]
-        //                 },
-        //                 {
-        //                     "long_name": "місто Київ",
-        //                     "short_name": "місто Київ",
-        //                     "types": ["administrative_area_level_1", "political"]
-        //                 },
-        //                 {
-        //                     "long_name": "Украина",
-        //                     "short_name": "UA",
-        //                     "types": ["country", "political"]
-        //                 }
-        //             ],
-        //             "geometry": {
-        //                 "location": {
-        //                     "lat": 50.449819,
-        //                     "lng": 30.453404
-        //                 },
-        //                 "location_type": "ROOFTOP",
-        //                 "viewport": {
-        //                     "northeast": {
-        //                         "lat": 50.4511679802915,
-        //                         "lng": 30.4547529802915
-        //                     },
-        //                     "southwest": {
-        //                         "lat": 50.4484700197085,
-        //                         "lng": 30.4520550197085
-        //                     }
-        //                 }
-        //             },
-        //             "types": ["street_address"]
-        //         }
-        //     ],
-        //     "status": "OK"
-        // }
+        const coordinates = {
+            "results": [
+                {
+                    "address_components": [
+                        {
+                            "long_name": "5",
+                            "short_name": "5",
+                            "types": ["street_number"]
+                        },
+                        {
+                            "long_name": "Киевский политехнический институт",
+                            "short_name": "Киевский политехнический институт",
+                            "types": ["establishment"]
+                        },
+                        {
+                            "long_name": "вулиця Академіка Янгеля",
+                            "short_name": "вулиця Академіка Янгеля",
+                            "types": ["route"]
+                        },
+                        {
+                            "long_name": "Солом'янський район",
+                            "short_name": "Солом'янський район",
+                            "types": ["sublocality_level_1", "sublocality", "political"]
+                        },
+                        {
+                            "long_name": "Київ",
+                            "short_name": "Київ",
+                            "types": ["locality", "political"]
+                        },
+                        {
+                            "long_name": "місто Київ",
+                            "short_name": "місто Київ",
+                            "types": ["administrative_area_level_2", "political"]
+                        },
+                        {
+                            "long_name": "місто Київ",
+                            "short_name": "місто Київ",
+                            "types": ["administrative_area_level_1", "political"]
+                        },
+                        {
+                            "long_name": "Украина",
+                            "short_name": "UA",
+                            "types": ["country", "political"]
+                        }
+                    ],
+                    "geometry": {
+                        "location": {
+                            "lat": 50.449819,
+                            "lng": 30.453404
+                        },
+                        "location_type": "ROOFTOP",
+                        "viewport": {
+                            "northeast": {
+                                "lat": 50.4511679802915,
+                                "lng": 30.4547529802915
+                            },
+                            "southwest": {
+                                "lat": 50.4484700197085,
+                                "lng": 30.4520550197085
+                            }
+                        }
+                    },
+                    "types": ["street_address"]
+                }
+            ],
+            "status": "OK"
+        }
 
-        // console.log(coordinates.results[1].long_name);
+        console.log(`Задача 5: ${coordinates.results[0].address_components[1].long_name} ${coordinates.results[0].address_components[0].long_name}, ${coordinates.results[0].address_components[5].long_name}, ${coordinates.results[0].address_components[7].long_name}`)
+
+
 
 
 
@@ -507,13 +482,22 @@
         // let value = prompt('Присвоить значение ключа');
         // const data = {};
 
-        // function addData(key, value) {
-        //     const dataKey = data[key];
-        //     data[key] = value;
-        // }
-        // console.log(data);
+        const dataUser = {};
+        let key = prompt('Введите key');
+        let val = prompt('Введите value');
 
-        // data(key, value);
+        function addData(key, val) {
+
+            for (let i = 0; i < 100; i++) {
+                if (key !== 'end' || val !== 'end') {
+                    dataUser[key] = val;
+                }
+            }
+        }
+
+        console.log(dataUser);
+
+        addData(key, val);
 
     </script>
 
